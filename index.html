@@ -1,0 +1,4939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KV Furniture | Premium Furniture Manufacturer</title>
+
+<meta name="description" content="KV Furniture - Premium made-to-order furniture manufacturer. Luxury sofas, dining furniture, bedroom furniture and custom designs crafted with thoughtful craftsmanship.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --white:#fbf8f2;
+    --white2:#f4eee5;
+    --cream:#eee4d5;
+
+    --brown:#3b2518;
+    --brown-dark:#24150d;
+    --brown-soft:#654431;
+
+    --gold:#b58a4a;
+    --gold-light:#d8b978;
+
+    --text:#2a1b12;
+    --muted:#806f61;
+
+    --border:rgba(88,57,35,.18);
+
+    --shadow:0 25px 70px rgba(55,32,17,.12);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--white);
+    color:var(--text);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+    width:8px;
+}
+
+body::-webkit-scrollbar-track{
+    background:#f1e9df;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:var(--brown);
+    border-radius:10px;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+#preloader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:var(--white);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:1s ease;
+}
+
+.loader-inner{
+    text-align:center;
+}
+
+.loader-logo{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    margin:auto;
+}
+
+.loader-line{
+    width:120px;
+    height:1px;
+    background:var(--gold);
+    margin:20px auto 14px;
+    transform-origin:left;
+    animation:loaderLine 1.5s ease infinite;
+}
+
+@keyframes loaderLine{
+    0%{transform:scaleX(0)}
+    50%{transform:scaleX(1)}
+    100%{transform:scaleX(0)}
+}
+
+.loader-inner p{
+    font-size:9px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--brown);
+    position:fixed;
+    z-index:9998;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+}
+
+.cursor-ring{
+    width:34px;
+    height:34px;
+    border:1px solid var(--brown-soft);
+    border-radius:50%;
+    position:fixed;
+    z-index:9997;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    transition:
+        width .25s ease,
+        height .25s ease,
+        border-color .25s ease;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:92px;
+    z-index:5000;
+
+    padding:0 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    transition:.45s ease;
+}
+
+.navbar.scrolled{
+    height:74px;
+    background:rgba(251,248,242,.94);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 10px 40px rgba(50,30,15,.06);
+}
+
+
+/* LOGO */
+
+.brand{
+    display:flex;
+    align-items:center;
+}
+
+.brand img{
+    width:105px;
+    max-height:58px;
+    object-fit:contain;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-links a{
+    position:relative;
+
+    font-size:10px;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+
+    color:var(--brown-dark);
+
+    transition:.3s ease;
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:1px;
+
+    background:var(--gold);
+
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-quote{
+    padding:13px 20px;
+
+    background:var(--brown);
+    color:white !important;
+
+    border:1px solid var(--brown);
+
+    transition:.35s ease;
+}
+
+.nav-quote::after{
+    display:none;
+}
+
+.nav-quote:hover{
+    background:var(--gold);
+    border-color:var(--gold);
+}
+
+
+/* MOBILE MENU */
+
+.menu-toggle{
+    display:none;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid var(--border);
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    width:20px;
+    height:1px;
+    background:var(--brown);
+
+    position:relative;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+
+    width:20px;
+    height:1px;
+
+    background:var(--brown);
+}
+
+.menu-toggle span::before{
+    top:-7px;
+}
+
+.menu-toggle span::after{
+    top:7px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#eadfd1;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:-7%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(39,24,14,.74) 0%,
+            rgba(39,24,14,.40) 43%,
+            rgba(39,24,14,.08) 100%
+        ),
+        url("https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp");
+
+    background-size:cover;
+    background-position:center;
+
+    animation:heroCamera 18s ease-in-out infinite alternate;
+}
+
+@keyframes heroCamera{
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.09) translate3d(-1%, -1%, 0);
+    }
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(32,18,10,.55),
+            transparent 45%
+        );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:900px;
+
+    padding:170px 8% 110px;
+
+    color:white;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:9px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    color:#ead2a3;
+
+    margin-bottom:25px;
+}
+
+.eyebrow::before{
+    content:"";
+
+    width:45px;
+    height:1px;
+
+    background:var(--gold-light);
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(65px,9vw,125px);
+
+    line-height:.82;
+
+    font-weight:500;
+
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:#e3c386;
+    font-style:italic;
+}
+
+.hero-description{
+    max-width:600px;
+
+    margin:34px 0;
+
+    color:#eee4d8;
+
+    font-size:14px;
+    line-height:1.9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-width:180px;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:16px 25px;
+
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    border:1px solid var(--gold);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:white;
+}
+
+.btn-secondary{
+    background:rgba(255,255,255,.05);
+    color:white;
+    backdrop-filter:blur(8px);
+}
+
+.btn:hover{
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+.hero-bottom{
+    position:absolute;
+
+    bottom:30px;
+    left:8%;
+    right:8%;
+
+    z-index:3;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:white;
+}
+
+.hero-bottom span{
+    font-size:8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.scroll-line{
+    width:70px;
+    height:1px;
+    background:var(--gold-light);
+    margin-top:9px;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.section{
+    padding:125px 8%;
+}
+
+.section-label{
+    color:var(--gold);
+
+    font-size:9px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:17px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(48px,6vw,82px);
+
+    line-height:.92;
+
+    font-weight:500;
+
+    color:var(--brown-dark);
+}
+
+.section-title span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.section-description{
+    max-width:620px;
+
+    margin-top:25px;
+
+    color:var(--muted);
+
+    font-size:13px;
+    line-height:1.9;
+}
+
+.section-heading{
+    max-width:750px;
+    margin-bottom:65px;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    background:var(--white);
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:85px;
+
+    align-items:center;
+}
+
+.about-image{
+    position:relative;
+
+    height:620px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1.2s ease;
+}
+
+.about-image:hover img{
+    transform:scale(1.06);
+}
+
+.image-border{
+    position:absolute;
+
+    inset:18px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    pointer-events:none;
+}
+
+.about-badge{
+    position:absolute;
+
+    left:25px;
+    bottom:25px;
+
+    background:rgba(255,255,255,.92);
+
+    padding:18px 22px;
+
+    min-width:220px;
+}
+
+.about-badge strong{
+    display:block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--brown);
+
+    font-size:27px;
+
+    font-weight:500;
+}
+
+.about-badge span{
+    display:block;
+
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.about-copy p{
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:2;
+
+    margin-bottom:22px;
+}
+
+.about-signature{
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--brown);
+
+    font-size:28px;
+
+    font-style:italic;
+}
+
+
+/* =========================================================
+   BRAND STATEMENT
+========================================================= */
+
+.statement{
+    padding:115px 8%;
+
+    background:var(--brown);
+
+    color:white;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.statement::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(216,185,120,.08);
+
+    top:-250px;
+    left:-150px;
+}
+
+.statement::after{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(216,185,120,.06);
+
+    bottom:-250px;
+    right:-120px;
+}
+
+.statement-inner{
+    position:relative;
+    z-index:2;
+
+    max-width:950px;
+
+    margin:auto;
+}
+
+.statement-mark{
+    color:var(--gold-light);
+
+    font-size:30px;
+
+    margin-bottom:22px;
+}
+
+.statement h2{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(45px,6vw,80px);
+
+    line-height:.95;
+
+    font-weight:500;
+}
+
+.statement h2 span{
+    color:var(--gold-light);
+    font-style:italic;
+}
+
+.statement p{
+    max-width:650px;
+
+    margin:28px auto 0;
+
+    color:#ddcfc0;
+
+    font-size:13px;
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   COLLECTION CATEGORIES
+========================================================= */
+
+.collections{
+    background:var(--white2);
+}
+
+.collection-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.collection-card{
+    position:relative;
+
+    height:430px;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:0 12px 45px rgba(60,35,18,.08);
+}
+
+.collection-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s cubic-bezier(.16,1,.3,1);
+}
+
+.collection-card:hover img{
+    transform:scale(1.09);
+}
+
+.collection-card::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(30,17,9,.82),
+            rgba(30,17,9,.02) 65%
+        );
+}
+
+.collection-info{
+    position:absolute;
+
+    left:28px;
+    right:28px;
+    bottom:25px;
+
+    z-index:2;
+
+    color:white;
+}
+
+.collection-info small{
+    color:#e1c386;
+
+    font-size:8px;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.collection-info h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    font-weight:500;
+
+    margin-top:7px;
+}
+
+
+/* =========================================================
+   SIGNATURE COLLECTION
+========================================================= */
+
+.signature{
+    background:white;
+
+    overflow:hidden;
+}
+
+.signature-layout{
+    display:grid;
+
+    grid-template-columns:1fr 1.25fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+
+/* LEFT INFO */
+
+.signature-intro{
+    max-width:450px;
+}
+
+.signature-intro p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.9;
+
+    margin-top:25px;
+}
+
+.signature-note{
+    margin-top:30px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--brown);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.signature-note::before{
+    content:"";
+
+    width:35px;
+    height:1px;
+
+    background:var(--gold);
+}
+
+
+/* SLIDER */
+
+.signature-slider{
+    position:relative;
+
+    overflow:hidden;
+
+    background:#eee5da;
+
+    box-shadow:var(--shadow);
+}
+
+.signature-track{
+    display:flex;
+
+    transition:
+        transform .75s cubic-bezier(.16,1,.3,1);
+}
+
+.signature-slide{
+    min-width:100%;
+
+    position:relative;
+
+    aspect-ratio:1 / .92;
+
+    overflow:hidden;
+}
+
+.signature-slide img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s ease;
+}
+
+.signature-slide:hover img{
+    transform:scale(1.025);
+}
+
+
+/* SLIDE NUMBER */
+
+.slide-number{
+    position:absolute;
+
+    left:25px;
+    top:25px;
+
+    z-index:3;
+
+    padding:9px 13px;
+
+    background:rgba(255,255,255,.92);
+
+    color:var(--brown);
+
+    font-size:9px;
+
+    letter-spacing:2px;
+}
+
+
+/* CONTROLS */
+
+.signature-controls{
+    position:absolute;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:5;
+
+    display:flex;
+
+    gap:8px;
+}
+
+.slider-btn{
+    width:48px;
+    height:48px;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    background:rgba(59,37,24,.92);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.slider-btn:hover{
+    background:var(--gold);
+}
+
+.slider-btn svg{
+    width:18px;
+    height:18px;
+}
+
+
+/* DOTS */
+
+.slider-dots{
+    display:flex;
+
+    justify-content:center;
+
+    gap:7px;
+
+    padding:18px;
+
+    background:white;
+}
+
+.slider-dot{
+    width:28px;
+    height:2px;
+
+    border:0;
+
+    background:#d8cdc0;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+}
+
+.slider-dot.active{
+    width:48px;
+    background:var(--gold);
+}
+
+
+/* =========================================================
+   CRAFTSMANSHIP
+========================================================= */
+
+.craftsmanship{
+    background:var(--white2);
+}
+
+.craft-grid{
+    display:grid;
+
+    grid-template-columns:1.15fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.craft-image{
+    position:relative;
+
+    height:600px;
+
+    overflow:hidden;
+}
+
+.craft-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1.2s ease;
+}
+
+.craft-image:hover img{
+    transform:scale(1.05);
+}
+
+.craft-overlay{
+    position:absolute;
+
+    left:25px;
+    bottom:25px;
+
+    padding:18px 22px;
+
+    background:rgba(255,255,255,.93);
+
+    color:var(--brown);
+}
+
+.craft-overlay strong{
+    display:block;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:27px;
+
+    font-weight:500;
+}
+
+.craft-overlay span{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.craft-copy p{
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.95;
+
+    margin-top:24px;
+}
+
+.craft-points{
+    margin-top:35px;
+}
+
+.craft-point{
+    display:flex;
+
+    gap:18px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.craft-point-number{
+    color:var(--gold);
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:23px;
+}
+
+.craft-point h4{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+
+    font-weight:500;
+}
+
+.craft-point p{
+    margin-top:4px;
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   WHY KV
+========================================================= */
+
+.why{
+    background:white;
+}
+
+.why-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1px;
+
+    background:var(--border);
+}
+
+.why-card{
+    padding:45px 35px;
+
+    background:white;
+
+    transition:.45s ease;
+}
+
+.why-card:hover{
+    background:#f7f1e9;
+    transform:translateY(-7px);
+}
+
+.why-icon{
+    width:50px;
+    height:50px;
+
+    border:1px solid var(--gold);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gold);
+
+    margin-bottom:25px;
+}
+
+.why-icon svg{
+    width:22px;
+    height:22px;
+}
+
+.why-card h3{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:29px;
+
+    font-weight:500;
+}
+
+.why-card p{
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   BRAND STORY
+========================================================= */
+
+.story{
+    background:var(--brown-dark);
+
+    color:white;
+}
+
+.story-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.story-copy .section-title{
+    color:white;
+}
+
+.story-copy .section-description{
+    color:#cdbdaf;
+}
+
+.story-image{
+    height:550px;
+
+    overflow:hidden;
+}
+
+.story-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s ease;
+}
+
+.story-image:hover img{
+    transform:scale(1.06);
+}
+
+.story-meta{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    margin-top:40px;
+}
+
+.story-stat{
+    border-top:1px solid rgba(255,255,255,.16);
+
+    padding-top:20px;
+}
+
+.story-stat strong{
+    display:block;
+
+    color:var(--gold-light);
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:40px;
+
+    font-weight:500;
+}
+
+.story-stat span{
+    color:#bdaea0;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.instagram{
+    background:var(--white2);
+}
+
+.instagram-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:30px;
+
+    margin-bottom:55px;
+}
+
+.instagram-handle{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--brown);
+
+    border-bottom:1px solid var(--gold);
+
+    padding-bottom:6px;
+
+    font-size:11px;
+}
+
+.instagram-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+}
+
+.instagram-item{
+    aspect-ratio:1;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.instagram-item img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.8s ease;
+}
+
+.instagram-item::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(59,37,24,0);
+
+    transition:.35s ease;
+}
+
+.instagram-item:hover img{
+    transform:scale(1.08);
+}
+
+.instagram-item:hover::after{
+    background:rgba(59,37,24,.18);
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+========================================================= */
+
+.testimonial{
+    padding:125px 8%;
+
+    background:white;
+
+    text-align:center;
+}
+
+.quote-mark{
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--gold);
+
+    font-size:80px;
+
+    line-height:.5;
+}
+
+.quote{
+    max-width:900px;
+
+    margin:35px auto;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--brown-dark);
+
+    font-size:clamp(35px,4vw,58px);
+
+    line-height:1.05;
+}
+
+.quote-author{
+    color:var(--gold);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+    background:var(--white2);
+}
+
+.faq-wrap{
+    max-width:900px;
+
+    margin:auto;
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+    width:100%;
+
+    padding:25px 0;
+
+    border:0;
+
+    background:none;
+
+    color:var(--brown-dark);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    text-align:left;
+}
+
+.faq-question span:first-child{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:25px;
+}
+
+.faq-plus{
+    width:28px;
+    height:28px;
+
+    border:1px solid var(--gold);
+
+    color:var(--gold);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+    transition:.35s ease;
+}
+
+.faq-answer{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .5s ease;
+}
+
+.faq-answer p{
+    padding:0 50px 25px 0;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.8;
+}
+
+.faq-item.active .faq-plus{
+    transform:rotate(45deg);
+
+    background:var(--gold);
+
+    color:white;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    background:white;
+}
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:start;
+}
+
+.contact-info{
+    margin-top:40px;
+}
+
+.contact-row{
+    display:flex;
+
+    gap:17px;
+
+    padding:21px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.contact-icon{
+    width:24px;
+
+    color:var(--gold);
+}
+
+.contact-icon svg{
+    width:19px;
+    height:19px;
+}
+
+.contact-row span{
+    display:block;
+
+    color:var(--gold);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:6px;
+}
+
+.contact-row a,
+.contact-row p{
+    color:var(--brown-dark);
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:21px;
+}
+
+
+/* FORM */
+
+.contact-form{
+    background:var(--white2);
+
+    padding:45px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+}
+
+.form-title{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:38px;
+
+    color:var(--brown-dark);
+
+    margin-bottom:30px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    color:var(--gold);
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+
+    border:0;
+
+    border-bottom:1px solid var(--border);
+
+    background:transparent;
+
+    padding:13px 0;
+
+    color:var(--brown-dark);
+
+    outline:none;
+
+    resize:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-bottom-color:var(--gold);
+}
+
+.form-group textarea{
+    min-height:100px;
+}
+
+.submit-btn{
+    width:100%;
+
+    padding:17px;
+
+    border:1px solid var(--brown);
+
+    background:var(--brown);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    transition:.35s ease;
+}
+
+.submit-btn:hover{
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta{
+    padding:120px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(50,30,18,.93),
+            rgba(50,30,18,.70)
+        ),
+        url("https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    text-align:center;
+
+    color:white;
+}
+
+.final-content{
+    max-width:850px;
+
+    margin:auto;
+}
+
+.final-content .section-label{
+    color:var(--gold-light);
+}
+
+.final-content h2{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(50px,7vw,90px);
+
+    line-height:.9;
+
+    font-weight:500;
+}
+
+.final-content h2 span{
+    color:var(--gold-light);
+
+    font-style:italic;
+}
+
+.final-content p{
+    max-width:600px;
+
+    margin:25px auto;
+
+    color:#ddd0c2;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#21140c;
+
+    color:white;
+
+    padding:70px 8% 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr 1fr;
+
+    gap:70px;
+
+    padding-bottom:55px;
+}
+
+.footer-logo{
+    width:110px;
+
+    max-height:65px;
+
+    object-fit:contain;
+
+    filter:none;
+
+    background:white;
+
+    padding:5px;
+}
+
+.footer-brand p{
+    max-width:380px;
+
+    color:#bcaea0;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-top:18px;
+}
+
+.footer-heading{
+    color:var(--gold-light);
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+.footer-links a{
+    display:block;
+
+    color:#c5b7a8;
+
+    font-size:11px;
+
+    margin-bottom:12px;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:var(--gold-light);
+
+    transform:translateX(4px);
+}
+
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    display:flex;
+
+    gap:9px;
+
+    margin-top:22px;
+}
+
+.social-icons a{
+    width:40px;
+    height:40px;
+
+    border:1px solid rgba(216,185,120,.35);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--gold-light);
+
+    transition:.3s ease;
+}
+
+.social-icons a:hover{
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    color:white;
+
+    transform:translateY(-4px);
+}
+
+.social-icons svg{
+    width:18px;
+    height:18px;
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    color:#897a6c;
+
+    font-size:9px;
+
+    letter-spacing:.5px;
+}
+
+.footer-bottom strong{
+    color:var(--gold-light);
+}
+
+
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+.floating-buttons{
+    position:fixed;
+
+    right:22px;
+    bottom:24px;
+
+    z-index:4000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.float-btn{
+    width:53px;
+    height:53px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    transition:.35s ease;
+}
+
+.float-btn svg{
+    width:21px;
+    height:21px;
+}
+
+.float-call{
+    background:white;
+
+    color:var(--brown);
+
+    border:1px solid var(--brown);
+}
+
+.float-whatsapp{
+    background:#25D366;
+
+    color:white;
+}
+
+.float-btn:hover{
+    transform:translateY(-5px) scale(1.06);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(65px);
+
+    transition:
+        opacity 1s cubic-bezier(.16,1,.3,1),
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal-left{
+    transform:translateX(-70px);
+}
+
+.reveal-right{
+    transform:translateX(70px);
+}
+
+.reveal.active{
+    opacity:1;
+
+    transform:translate(0,0);
+}
+
+
+/* =========================================================
+   IMAGE PARALLAX
+========================================================= */
+
+.parallax-image{
+    will-change:transform;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .nav-links{
+        gap:19px;
+    }
+
+    .collection-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .signature-layout{
+        grid-template-columns:1fr;
+
+        gap:50px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1.3fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    .nav-links{
+        position:fixed;
+
+        top:74px;
+        left:0;
+
+        width:100%;
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:25px;
+
+        background:rgba(251,248,242,.98);
+
+        backdrop-filter:blur(15px);
+
+        border-bottom:1px solid var(--border);
+
+        box-shadow:0 20px 50px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:14px 0;
+    }
+
+    .nav-quote{
+        text-align:center;
+        margin-top:8px;
+    }
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    .about-grid,
+    .craft-grid,
+    .story-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+
+        gap:50px;
+    }
+
+    .about-image,
+    .craft-image{
+        height:520px;
+    }
+
+    .instagram-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .cursor,
+    .cursor-ring{
+        display:none;
+    }
+
+    .brand img{
+        width:88px;
+    }
+
+    .hero-content{
+        padding:150px 7% 100px;
+    }
+
+    .hero h1{
+        font-size:64px;
+
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .btn{
+        min-width:190px;
+    }
+
+    .section{
+        padding:90px 7%;
+    }
+
+    .collection-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .collection-card{
+        height:420px;
+    }
+
+    .signature-slide{
+        aspect-ratio:1 / 1;
+    }
+
+    .signature-controls{
+        right:12px;
+        bottom:12px;
+    }
+
+    .slider-btn{
+        width:43px;
+        height:43px;
+    }
+
+    .about-image,
+    .craft-image{
+        height:430px;
+    }
+
+    .story-image{
+        height:420px;
+    }
+
+    .instagram-top{
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .contact-form{
+        padding:28px 22px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    .hero-bottom{
+        display:none;
+    }
+
+    .floating-buttons{
+        right:14px;
+        bottom:15px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     PRELOADER
+======================================================= -->
+
+<div id="preloader">
+
+    <div class="loader-inner">
+
+        <img
+            src="logo.png"
+            class="loader-logo"
+            alt="KV Furniture"
+        >
+
+        <div class="loader-line"></div>
+
+        <p>Premium Furniture Manufacturer</p>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     CUSTOM CURSOR
+======================================================= -->
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+
+<!-- =======================================================
+     NAVBAR
+======================================================= -->
+
+<header class="navbar">
+
+    <a href="#home" class="brand">
+
+        <img
+            src="logo.png"
+            alt="KV Furniture"
+        >
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#collections">Collections</a>
+
+        <a href="#signature">Signature</a>
+
+        <a href="#craftsmanship">Craftsmanship</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact" class="nav-quote">
+            Get a Quote
+        </a>
+
+    </nav>
+
+
+    <div class="menu-toggle">
+        <span></span>
+    </div>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            Premium Furniture Manufacturer
+        </div>
+
+
+        <h1>
+            Crafting Furniture.
+            <br>
+            <span>Building Relationships.</span>
+        </h1>
+
+
+        <p class="hero-description">
+            Made-to-order furniture, crafted in our own workshop
+            with honest materials, thoughtful craftsmanship and
+            designs created for homes across India.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#signature"
+                class="btn btn-primary magnetic"
+            >
+                Explore Collection
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-secondary magnetic"
+            >
+                Get a Quote
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div>
+
+            <span>Since May 2022</span>
+
+            <div class="scroll-line"></div>
+
+        </div>
+
+
+        <div>
+
+            <span>Made to Order · Made in India</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section class="section about" id="about">
+
+    <div class="about-grid">
+
+
+        <div class="about-image reveal reveal-left">
+
+            <img
+                class="parallax-image"
+                src="https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp"
+                alt="Luxury Royal Furniture"
+            >
+
+            <div class="image-border"></div>
+
+
+            <div class="about-badge">
+
+                <strong>One Order.</strong>
+
+                <span>
+                    One Home. One Relationship at a Time.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="reveal reveal-right">
+
+            <div class="section-label">
+                About KV Furniture
+            </div>
+
+
+            <h2 class="section-title">
+                Furniture with
+                <span>character.</span>
+            </h2>
+
+
+            <p class="section-description">
+                Since May 2022, KV Furniture has grown through
+                one simple belief — if our name is on it,
+                we should be proud of how it was made.
+            </p>
+
+
+            <div class="about-copy">
+
+                <p>
+                    We manufacture furniture to order in our own
+                    workshop, combining premium materials,
+                    thoughtful craftsmanship and custom designs.
+                </p>
+
+                <p>
+                    From statement sofas and royal dining furniture
+                    to bedroom collections and completely customised
+                    pieces, every product is created to become a
+                    meaningful part of someone's home.
+                </p>
+
+                <p>
+                    Our approach is simple:
+                    honest materials, careful craftsmanship and
+                    transparent pricing without unnecessary compromises.
+                </p>
+
+            </div>
+
+
+            <div class="about-signature">
+                Crafted with pride. Designed to belong.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STATEMENT
+======================================================= -->
+
+<section class="statement">
+
+    <div class="statement-inner reveal">
+
+        <div class="statement-mark">
+            ✦
+        </div>
+
+
+        <h2>
+            If our name is on it,
+            <span>we should be proud of how it was made.</span>
+        </h2>
+
+
+        <p>
+            Every piece is made with attention to material,
+            proportion, comfort and detail — because furniture
+            should not simply fill a room. It should define it.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     COLLECTION CATEGORIES
+======================================================= -->
+
+<section
+    class="section collections"
+    id="collections"
+>
+
+    <div class="section-heading reveal">
+
+        <div class="section-label">
+            Our Collections
+        </div>
+
+
+        <h2 class="section-title">
+            Designed for
+            <span>beautiful living.</span>
+        </h2>
+
+
+        <p class="section-description">
+            Discover furniture created for statement interiors,
+            comfortable homes and spaces that deserve something
+            truly distinctive.
+        </p>
+
+    </div>
+
+
+    <div class="collection-grid">
+
+
+        <!-- SOFAS -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp"
+                alt="Luxury Sofas"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>01 · Living</small>
+
+                <h3>Luxury Sofas</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- DINING -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/10/dining-table.jpg"
+                alt="Luxury Dining Furniture"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>02 · Dining</small>
+
+                <h3>Dining Collection</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- BEDROOM -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/09/bedroom.jpg"
+                alt="Luxury Bedroom Furniture"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>03 · Bedroom</small>
+
+                <h3>Bedroom Collection</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHAIRS -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/09/royal-chair.jpg"
+                alt="Royal Chairs"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>04 · Seating</small>
+
+                <h3>Royal Chairs</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- TEAK -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://www.uthsavi.com/blog_images/custom-solid-wood-furniture-manufacturer-in-india-1767094201.webp"
+                alt="Solid Wood Furniture"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>05 · Wood</small>
+
+                <h3>Solid Teak Wood</h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOM -->
+
+        <div class="collection-card reveal">
+
+            <img
+                src="https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp"
+                alt="Custom Furniture"
+                loading="lazy"
+            >
+
+            <div class="collection-info">
+
+                <small>06 · Bespoke</small>
+
+                <h3>Custom Designs</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SIGNATURE COLLECTION
+======================================================= -->
+
+<section
+    class="section signature"
+    id="signature"
+>
+
+    <div class="signature-layout">
+
+
+        <div class="signature-intro reveal reveal-left">
+
+            <div class="section-label">
+                Signature Collection
+            </div>
+
+
+            <h2 class="section-title">
+                Our
+                <span>signature pieces.</span>
+            </h2>
+
+
+            <p>
+                A selection of KV Furniture's statement pieces.
+                Each design can be discussed, customised and
+                made according to your requirements.
+            </p>
+
+
+            <div class="signature-note">
+                5 Signature Designs · Manual Showcase
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MANUAL SLIDER
+        ================================================= -->
+
+        <div class="signature-slider reveal reveal-right">
+
+
+            <div
+                class="signature-track"
+                id="signatureTrack"
+            >
+
+
+                <!-- S1 -->
+
+                <div class="signature-slide">
+
+                    <img
+                        src="s1.jpg"
+                        alt="KV Furniture Signature Collection 1"
+                    >
+
+                    <div class="slide-number">
+                        01 / 05
+                    </div>
+
+                </div>
+
+
+                <!-- S2 -->
+
+                <div class="signature-slide">
+
+                    <img
+                        src="s2.jpg"
+                        alt="KV Furniture Signature Collection 2"
+                    >
+
+                    <div class="slide-number">
+                        02 / 05
+                    </div>
+
+                </div>
+
+
+                <!-- S3 -->
+
+                <div class="signature-slide">
+
+                    <img
+                        src="s3.jpg"
+                        alt="KV Furniture Signature Collection 3"
+                    >
+
+                    <div class="slide-number">
+                        03 / 05
+                    </div>
+
+                </div>
+
+
+                <!-- S4 -->
+
+                <div class="signature-slide">
+
+                    <img
+                        src="s4.jpg"
+                        alt="KV Furniture Signature Collection 4"
+                    >
+
+                    <div class="slide-number">
+                        04 / 05
+                    </div>
+
+                </div>
+
+
+                <!-- S5 -->
+
+                <div class="signature-slide">
+
+                    <img
+                        src="s5.jpg"
+                        alt="KV Furniture Signature Collection 5"
+                    >
+
+                    <div class="slide-number">
+                        05 / 05
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="signature-controls">
+
+                <button
+                    class="slider-btn"
+                    id="prevSlide"
+                    aria-label="Previous product"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+                        <path
+                            d="M15 18l-6-6 6-6"
+                        />
+                    </svg>
+
+                </button>
+
+
+                <button
+                    class="slider-btn"
+                    id="nextSlide"
+                    aria-label="Next product"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+                        <path
+                            d="M9 18l6-6-6-6"
+                        />
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DOTS -->
+
+    <div
+        class="slider-dots"
+        id="sliderDots"
+    >
+
+        <button
+            class="slider-dot active"
+            data-slide="0"
+            aria-label="Slide 1"
+        ></button>
+
+        <button
+            class="slider-dot"
+            data-slide="1"
+            aria-label="Slide 2"
+        ></button>
+
+        <button
+            class="slider-dot"
+            data-slide="2"
+            aria-label="Slide 3"
+        ></button>
+
+        <button
+            class="slider-dot"
+            data-slide="3"
+            aria-label="Slide 4"
+        ></button>
+
+        <button
+            class="slider-dot"
+            data-slide="4"
+            aria-label="Slide 5"
+        ></button>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CRAFTSMANSHIP
+======================================================= -->
+
+<section
+    class="section craftsmanship"
+    id="craftsmanship"
+>
+
+    <div class="craft-grid">
+
+
+        <div class="craft-image reveal reveal-left">
+
+            <img
+                class="parallax-image"
+                src="https://www.uthsavi.com/blog_images/custom-solid-wood-furniture-manufacturer-in-india-1767094201.webp"
+                alt="Furniture Craftsmanship Workshop"
+                loading="lazy"
+            >
+
+            <div class="craft-overlay">
+
+                <strong>Crafted by Hand.</strong>
+
+                <span>
+                    Thoughtful craftsmanship
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="craft-copy reveal reveal-right">
+
+            <div class="section-label">
+                Our Workshop
+            </div>
+
+
+            <h2 class="section-title">
+                Where ideas become
+                <span>furniture.</span>
+            </h2>
+
+
+            <p>
+                Our own workshop gives us the freedom to focus
+                on the details that matter — from material selection
+                and woodwork to finishing and upholstery.
+            </p>
+
+
+            <p>
+                Instead of treating furniture as a mass-produced
+                commodity, we believe every piece deserves the
+                attention normally reserved for something truly special.
+            </p>
+
+
+            <div class="craft-points">
+
+
+                <div class="craft-point">
+
+                    <div class="craft-point-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Honest Materials
+                        </h4>
+
+                        <p>
+                            Materials selected with durability,
+                            appearance and purpose in mind.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="craft-point">
+
+                    <div class="craft-point-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Thoughtful Craftsmanship
+                        </h4>
+
+                        <p>
+                            Every detail receives attention
+                            before a piece leaves our workshop.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="craft-point">
+
+                    <div class="craft-point-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Made to Order
+                        </h4>
+
+                        <p>
+                            Designs can be adapted to your
+                            space, style and requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     WHY KV
+======================================================= -->
+
+<section class="section why">
+
+    <div class="section-heading reveal">
+
+        <div class="section-label">
+            Why KV Furniture
+        </div>
+
+
+        <h2 class="section-title">
+            The details behind
+            <span>the trust.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M12 3v18"/>
+                    <path d="M3 12h18"/>
+                    <circle cx="12" cy="12" r="8"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Made to Order
+            </h3>
+
+            <p>
+                Furniture created according to your
+                requirements rather than unnecessary mass production.
+            </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M12 3l2.4 5.1L20 9l-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5L4 9l5.6-.9L12 3z"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Custom Designs
+            </h3>
+
+            <p>
+                Create furniture around your home's
+                dimensions, personality and interior vision.
+            </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M3 21h18"/>
+                    <path d="M5 21V8l7-5 7 5v13"/>
+                    <path d="M9 21v-7h6v7"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Own Workshop
+            </h3>
+
+            <p>
+                Greater control over craftsmanship,
+                finishing and quality from workshop to home.
+            </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M12 3l7 3v5c0 5-3.2 8.5-7 10-3.8-1.5-7-5-7-10V6l7-3z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Honest Materials
+            </h3>
+
+            <p>
+                Materials chosen with transparency and
+                long-term value in mind.
+            </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M3 12h18"/>
+                    <path d="M12 3v18"/>
+                    <path d="M5 5l14 14"/>
+                    <path d="M19 5L5 19"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Transparent Pricing
+            </h3>
+
+            <p>
+                Straightforward conversations without
+                unnecessary compromises.
+            </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+            <div class="why-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                >
+                    <path d="M3 6h18"/>
+                    <path d="M5 6v13h14V6"/>
+                    <path d="M8 3v3"/>
+                    <path d="M16 3v3"/>
+                </svg>
+
+            </div>
+
+            <h3>
+                Pan-India Delivery
+            </h3>
+
+            <p>
+                Bringing thoughtfully crafted furniture
+                to homes across India.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     STORY
+======================================================= -->
+
+<section class="section story">
+
+    <div class="story-grid">
+
+
+        <div class="story-copy reveal reveal-left">
+
+            <div class="section-label">
+                Our Story
+            </div>
+
+
+            <h2 class="section-title">
+                One order.
+                <br>
+                One home.
+                <br>
+                <span>One relationship.</span>
+            </h2>
+
+
+            <p class="section-description">
+                Since May 2022, KV Furniture has grown around
+                a community that values good furniture, honest
+                craftsmanship and personal relationships.
+            </p>
+
+
+            <div class="story-meta">
+
+
+                <div class="story-stat">
+
+                    <strong>2022</strong>
+
+                    <span>
+                        Established
+                    </span>
+
+                </div>
+
+
+                <div class="story-stat">
+
+                    <strong>100K+</strong>
+
+                    <span>
+                        Community
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="story-image reveal reveal-right">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/09/luxury-furniture.jpg"
+                alt="Luxury Furniture Interior"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     INSTAGRAM GALLERY
+======================================================= -->
+
+<section
+    class="section instagram"
+    id="gallery"
+>
+
+    <div class="instagram-top reveal">
+
+        <div>
+
+            <div class="section-label">
+                From Our Instagram
+            </div>
+
+            <h2 class="section-title">
+                See what we're
+                <span>creating.</span>
+            </h2>
+
+        </div>
+
+
+        <a
+            href="https://instagram.com/kvfurniture_"
+            target="_blank"
+            class="instagram-handle magnetic"
+        >
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+            >
+                <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                />
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                />
+
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                />
+
+            </svg>
+
+            @kvfurniture_
+
+        </a>
+
+    </div>
+
+
+    <div class="instagram-grid">
+
+
+        <div class="instagram-item reveal">
+
+            <img
+                src="https://aarsunwoods.b-cdn.net/sofa%20set%202/Wooden-Sofa-Set-with-Royal-Finish-UH-YT-216-jpg.webp"
+                alt="Royal Sofa"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instagram-item reveal">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/10/dining-table.jpg"
+                alt="Dining Furniture"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instagram-item reveal">
+
+            <img
+                src="https://www.royalzig.com/wp-content/uploads/2023/09/bedroom.jpg"
+                alt="Bedroom Furniture"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="instagram-item reveal">
+
+            <img
+                src="https://www.uthsavi.com/blog_images/custom-solid-wood-furniture-manufacturer-in-india-1767094201.webp"
+                alt="Furniture Workshop"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     TESTIMONIAL
+======================================================= -->
+
+<section class="testimonial">
+
+    <div class="quote-mark">
+        “
+    </div>
+
+
+    <div class="quote reveal">
+
+        Every home tells a different story,
+        and every piece of furniture should
+        become a part of it.
+
+    </div>
+
+
+    <div class="quote-author">
+        KV Furniture
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FAQ
+======================================================= -->
+
+<section class="section faq">
+
+    <div class="section-heading reveal">
+
+        <div class="section-label">
+            Frequently Asked
+        </div>
+
+
+        <h2 class="section-title">
+            Questions,
+            <span>answered.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="faq-wrap">
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+                <span>
+                    Do you manufacture furniture to order?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Yes. KV Furniture specialises in made-to-order
+                    furniture and custom designs based on your requirements.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+                <span>
+                    Can I customise the design?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Yes. You can discuss dimensions, upholstery,
+                    finish, colour and design requirements with our team.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+                <span>
+                    Do you deliver across India?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KV Furniture serves customers across India.
+                    Contact us with your location and requirements
+                    for delivery details.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+                <span>
+                    How can I get pricing?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    Send us your furniture requirement through WhatsApp
+                    or the enquiry form and our team can discuss the
+                    appropriate design and pricing with you.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item reveal">
+
+            <button class="faq-question">
+
+                <span>
+                    Where is KV Furniture located?
+                </span>
+
+                <span class="faq-plus">
+                    +
+                </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+                <p>
+                    KV Furniture is located at 9/46, Kirti Nagar
+                    Industrial Area, near MDH Masala Factory,
+                    New Delhi - 110015.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section
+    class="section contact"
+    id="contact"
+>
+
+    <div class="contact-grid">
+
+
+        <div class="reveal reveal-left">
+
+            <div class="section-label">
+                Start Your Project
+            </div>
+
+
+            <h2 class="section-title">
+                Let's create
+                <span>something beautiful.</span>
+            </h2>
+
+
+            <p class="section-description">
+                Tell us what you're looking for and our team
+                will connect with you to discuss your requirements.
+            </p>
+
+
+            <div class="contact-info">
+
+
+                <!-- PHONE -->
+
+                <div class="contact-row">
+
+                    <div class="contact-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        >
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                19.79 19.79 0 0 1-8.63-3.07
+                                19.5 19.5 0 0 1-6-6
+                                19.79 19.79 0 0 1-3.07-8.67
+                                A2 2 0 0 1 4.11 2h3
+                                a2 2 0 0 1 2 1.72
+                                c.12.9.33 1.78.62 2.63
+                                a2 2 0 0 1-.45 2.11L8 9.73
+                                a16 16 0 0 0 6 6l1.27-1.27
+                                a2 2 0 0 1 2.11-.45
+                                c.85.29 1.73.5 2.63.62
+                                A2 2 0 0 1 22 16.92z"
+                            />
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Call / WhatsApp
+                        </span>
+
+                        <a href="tel:+919599275475">
+                            +91 95992 75475
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INSTAGRAM -->
+
+                <div class="contact-row">
+
+                    <div class="contact-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        >
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4"
+                            />
+
+                            <circle
+                                cx="17.5"
+                                cy="6.5"
+                                r="1"
+                                fill="currentColor"
+                                stroke="none"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Instagram
+                        </span>
+
+                        <a
+                            href="https://instagram.com/kvfurniture_"
+                            target="_blank"
+                        >
+                            @kvfurniture_
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="contact-row">
+
+                    <div class="contact-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        >
+                            <path
+                                d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="9"
+                                r="2.2"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Visit Us
+                        </span>
+
+                        <p>
+                            9/46, Kirti Nagar Industrial Area,
+                            Near MDH Masala Factory,
+                            New Delhi - 110015
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="contact-form reveal reveal-right">
+
+            <div class="form-title">
+                Get a Quote
+            </div>
+
+
+            <form id="enquiryForm">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Furniture Required
+                    </label>
+
+                    <input
+                        type="text"
+                        id="furnitureType"
+                        placeholder="Sofa / Dining / Bedroom / Custom"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Custom Requirement
+                    </label>
+
+                    <textarea
+                        id="customerMessage"
+                        placeholder="Tell us what you are looking for..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn magnetic"
+                >
+                    Send Enquiry on WhatsApp
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FINAL CTA
+======================================================= -->
+
+<section class="final-cta">
+
+    <div class="final-content reveal">
+
+        <div class="section-label">
+            KV Furniture
+        </div>
+
+
+        <h2>
+            Every home tells a story.
+            <span>Craft yours beautifully.</span>
+        </h2>
+
+
+        <p>
+            Premium furniture. Thoughtful craftsmanship.
+            Custom designs made for your space.
+        </p>
+
+
+        <a
+            href="#contact"
+            class="btn btn-primary magnetic"
+        >
+            Start Your Enquiry
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div>
+
+            <img
+                src="logo.png"
+                alt="KV Furniture"
+                class="footer-logo"
+            >
+
+
+            <p class="footer-brand">
+
+                Premium furniture manufacturer specialising
+                in made-to-order furniture, custom designs
+                and thoughtful craftsmanship.
+
+            </p>
+
+
+            <div class="social-icons">
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://instagram.com/kvfurniture_"
+                    target="_blank"
+                    aria-label="Instagram"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+
+                        <rect
+                            x="3"
+                            y="3"
+                            width="18"
+                            height="18"
+                            rx="5"
+                        />
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="4"
+                        />
+
+                        <circle
+                            cx="17.5"
+                            cy="6.5"
+                            r="1"
+                            fill="currentColor"
+                            stroke="none"
+                        />
+
+                    </svg>
+
+                </a>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/919599275475"
+                    target="_blank"
+                    aria-label="WhatsApp"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+
+                        <path
+                            d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"
+                        />
+
+                        <path
+                            d="M8.5 8.5c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.4.8-.4.2-1.4.4-2.8-.2-1.4-.6-2.6-1.5-3.6-2.6-1-1.1-1.7-2.4-2-3.4-.3-1 .1-1.7.4-1.9z"
+                        />
+
+                    </svg>
+
+                </a>
+
+
+                <!-- CALL -->
+
+                <a
+                    href="tel:+919599275475"
+                    aria-label="Call"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2
+                            19.79 19.79 0 0 1-8.63-3.07
+                            19.5 19.5 0 0 1-6-6
+                            19.79 19.79 0 0 1-3.07-8.67
+                            A2 2 0 0 1 4.11 2h3
+                            a2 2 0 0 1 2 1.72
+                            c.12.9.33 1.78.62 2.63
+                            a2 2 0 0 1-.45 2.11L8 9.73
+                            a16 16 0 0 0 6 6l1.27-1.27
+                            a2 2 0 0 1 2.11-.45
+                            c.85.29 1.73.5 2.63.62
+                            A2 2 0 0 1 22 16.92z"
+                        />
+
+                    </svg>
+
+                </a>
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:kvfurniture@gmail.com"
+                    aria-label="Email"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+
+                        <rect
+                            x="3"
+                            y="5"
+                            width="18"
+                            height="14"
+                            rx="2"
+                        />
+
+                        <path
+                            d="M3 7l9 6 9-6"
+                        />
+
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+
+        <div class="footer-links">
+
+            <div class="footer-heading">
+                Explore
+            </div>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About KV</a>
+
+            <a href="#collections">Collections</a>
+
+            <a href="#signature">Signature Collection</a>
+
+            <a href="#craftsmanship">Craftsmanship</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="footer-links">
+
+            <div class="footer-heading">
+                Collections
+            </div>
+
+            <a href="#collections">
+                Luxury Sofas
+            </a>
+
+            <a href="#collections">
+                Dining Collection
+            </a>
+
+            <a href="#collections">
+                Bedroom Collection
+            </a>
+
+            <a href="#collections">
+                Royal Chairs
+            </a>
+
+            <a href="#collections">
+                Solid Teak Wood
+            </a>
+
+            <a href="#collections">
+                Custom Designs
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 KV Furniture. All Rights Reserved.
+        </span>
+
+        <span>
+            Designed by
+            <strong>Marwar Infotech</strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =======================================================
+     FLOATING BUTTONS
+======================================================= -->
+
+<div class="floating-buttons">
+
+
+    <!-- CALL -->
+
+    <a
+        href="tel:+919599275475"
+        class="float-btn float-call magnetic"
+        aria-label="Call KV Furniture"
+    >
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+        >
+
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                19.79 19.79 0 0 1-8.63-3.07
+                19.5 19.5 0 0 1-6-6
+                19.79 19.79 0 0 1-3.07-8.67
+                A2 2 0 0 1 4.11 2h3
+                a2 2 0 0 1 2 1.72
+                c.12.9.33 1.78.62 2.63
+                a2 2 0 0 1-.45 2.11L8 9.73
+                a16 16 0 0 0 6 6l1.27-1.27
+                a2 2 0 0 1 2.11-.45
+                c.85.29 1.73.5 2.63.62
+                A2 2 0 0 1 22 16.92z"
+            />
+
+        </svg>
+
+    </a>
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        href="https://wa.me/919599275475"
+        target="_blank"
+        class="float-btn float-whatsapp magnetic"
+        aria-label="WhatsApp KV Furniture"
+    >
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+        >
+
+            <path
+                d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"
+            />
+
+            <path
+                d="M8.5 8.5c.2-.4.5-.4.8-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.2.1.4-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.4.8-.4.2-1.4.4-2.8-.2-1.4-.6-2.6-1.5-3.6-2.6-1-1.1-1.7-2.4-2-3.4-.3-1 .1-1.7.4-1.9z"
+            />
+
+        </svg>
+
+    </a>
+
+</div>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        const preloader=
+            document.getElementById("preloader");
+
+        preloader.style.opacity="0";
+        preloader.style.pointerEvents="none";
+
+        setTimeout(function(){
+
+            preloader.remove();
+
+        },1000);
+
+    },700);
+
+});
+
+
+/* =========================================================
+   NAVBAR SCROLL
+========================================================= */
+
+const navbar=
+    document.querySelector(".navbar");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY>50){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle=
+    document.querySelector(".menu-toggle");
+
+const navLinks=
+    document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click",function(){
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements=
+    document.querySelectorAll(".reveal");
+
+const revealObserver=
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("active");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12,
+            rootMargin:"0px 0px -50px 0px"
+        }
+    );
+
+
+revealElements.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   MAGNETIC EFFECT
+========================================================= */
+
+const magneticElements=
+    document.querySelectorAll(".magnetic");
+
+
+magneticElements.forEach(function(element){
+
+    element.addEventListener("mousemove",function(e){
+
+        const rect=
+            element.getBoundingClientRect();
+
+        const x=
+            e.clientX -
+            rect.left -
+            rect.width/2;
+
+        const y=
+            e.clientY -
+            rect.top -
+            rect.height/2;
+
+        element.style.transform=
+            `translate(${x*.12}px, ${y*.12}px)`;
+
+    });
+
+
+    element.addEventListener("mouseleave",function(){
+
+        element.style.transform=
+            "translate(0,0)";
+
+    });
+
+});
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+const cursor=
+    document.querySelector(".cursor");
+
+const cursorRing=
+    document.querySelector(".cursor-ring");
+
+
+document.addEventListener("mousemove",function(e){
+
+    cursor.style.left=
+        e.clientX+"px";
+
+    cursor.style.top=
+        e.clientY+"px";
+
+
+    cursorRing.style.left=
+        e.clientX+"px";
+
+    cursorRing.style.top=
+        e.clientY+"px";
+
+});
+
+
+document.querySelectorAll(
+    "a,button,.collection-card,.why-card,.instagram-item"
+).forEach(function(element){
+
+    element.addEventListener("mouseenter",function(){
+
+        cursorRing.style.width="55px";
+
+        cursorRing.style.height="55px";
+
+        cursorRing.style.borderColor=
+            "rgba(181,138,74,.8)";
+
+    });
+
+
+    element.addEventListener("mouseleave",function(){
+
+        cursorRing.style.width="34px";
+
+        cursorRing.style.height="34px";
+
+        cursorRing.style.borderColor=
+            "rgba(88,57,35,.5)";
+
+    });
+
+});
+
+
+/* =========================================================
+   SIGNATURE COLLECTION SLIDER
+   MANUAL ONLY
+========================================================= */
+
+const signatureTrack=
+    document.getElementById("signatureTrack");
+
+const slides=
+    document.querySelectorAll(".signature-slide");
+
+const prevButton=
+    document.getElementById("prevSlide");
+
+const nextButton=
+    document.getElementById("nextSlide");
+
+const dots=
+    document.querySelectorAll(".slider-dot");
+
+let currentSlide=0;
+
+
+function updateSlider(){
+
+    signatureTrack.style.transform=
+        `translateX(-${currentSlide*100}%)`;
+
+
+    dots.forEach(function(dot,index){
+
+        if(index===currentSlide){
+
+            dot.classList.add("active");
+
+        }else{
+
+            dot.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+
+nextButton.addEventListener("click",function(){
+
+    currentSlide++;
+
+    if(currentSlide>=slides.length){
+
+        currentSlide=0;
+
+    }
+
+    updateSlider();
+
+});
+
+
+prevButton.addEventListener("click",function(){
+
+    currentSlide--;
+
+    if(currentSlide<0){
+
+        currentSlide=slides.length-1;
+
+    }
+
+    updateSlider();
+
+});
+
+
+dots.forEach(function(dot){
+
+    dot.addEventListener("click",function(){
+
+        currentSlide=
+            Number(dot.dataset.slide);
+
+        updateSlider();
+
+    });
+
+});
+
+
+/* =========================================================
+   KEYBOARD SLIDER
+========================================================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="ArrowRight"){
+
+        currentSlide++;
+
+        if(currentSlide>=slides.length){
+            currentSlide=0;
+        }
+
+        updateSlider();
+
+    }
+
+
+    if(e.key==="ArrowLeft"){
+
+        currentSlide--;
+
+        if(currentSlide<0){
+            currentSlide=slides.length-1;
+        }
+
+        updateSlider();
+
+    }
+
+});
+
+
+/* =========================================================
+   TOUCH SWIPE
+========================================================= */
+
+let touchStartX=0;
+let touchEndX=0;
+
+
+signatureTrack.addEventListener(
+    "touchstart",
+    function(e){
+
+        touchStartX=
+            e.changedTouches[0].screenX;
+
+    },
+    {passive:true}
+);
+
+
+signatureTrack.addEventListener(
+    "touchend",
+    function(e){
+
+        touchEndX=
+            e.changedTouches[0].screenX;
+
+        const difference=
+            touchStartX-touchEndX;
+
+
+        if(Math.abs(difference)>50){
+
+            if(difference>0){
+
+                currentSlide++;
+
+                if(currentSlide>=slides.length){
+                    currentSlide=0;
+                }
+
+            }else{
+
+                currentSlide--;
+
+                if(currentSlide<0){
+                    currentSlide=slides.length-1;
+                }
+
+            }
+
+            updateSlider();
+
+        }
+
+    },
+    {passive:true}
+);
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+const faqItems=
+    document.querySelectorAll(".faq-item");
+
+
+faqItems.forEach(function(item){
+
+    const question=
+        item.querySelector(".faq-question");
+
+    const answer=
+        item.querySelector(".faq-answer");
+
+
+    question.addEventListener("click",function(){
+
+        const isActive=
+            item.classList.contains("active");
+
+
+        faqItems.forEach(function(other){
+
+            other.classList.remove("active");
+
+            other.querySelector(
+                ".faq-answer"
+            ).style.maxHeight=null;
+
+        });
+
+
+        if(!isActive){
+
+            item.classList.add("active");
+
+            answer.style.maxHeight=
+                answer.scrollHeight+"px";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   PARALLAX IMAGES
+========================================================= */
+
+const parallaxImages=
+    document.querySelectorAll(".parallax-image");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        parallaxImages.forEach(function(image){
+
+            const rect=
+                image.getBoundingClientRect();
+
+            if(
+                rect.top<window.innerHeight &&
+                rect.bottom>0
+            ){
+
+                const movement=
+                    (window.innerHeight/2-rect.top)*.018;
+
+                image.style.transform=
+                    `scale(1.04) translateY(${movement}px)`;
+
+            }
+
+        });
+
+    },
+    {passive:true}
+);
+
+
+/* =========================================================
+   STAGGER COLLECTIONS
+========================================================= */
+
+document.querySelectorAll(".collection-card")
+.forEach(function(card,index){
+
+    card.style.transitionDelay=
+        `${index*80}ms`;
+
+});
+
+
+/* =========================================================
+   STAGGER WHY CARDS
+========================================================= */
+
+document.querySelectorAll(".why-card")
+.forEach(function(card,index){
+
+    card.style.transitionDelay=
+        `${index*70}ms`;
+
+});
+
+
+/* =========================================================
+   ENQUIRY FORM
+========================================================= */
+
+const enquiryForm=
+    document.getElementById("enquiryForm");
+
+
+enquiryForm.addEventListener(
+    "submit",
+    function(e){
+
+        e.preventDefault();
+
+
+        const name=
+            document.getElementById(
+                "customerName"
+            ).value.trim();
+
+
+        const phone=
+            document.getElementById(
+                "customerPhone"
+            ).value.trim();
+
+
+        const furniture=
+            document.getElementById(
+                "furnitureType"
+            ).value.trim();
+
+
+        const message=
+            document.getElementById(
+                "customerMessage"
+            ).value.trim();
+
+
+        const whatsappMessage=
+`*New Enquiry - KV Furniture*
+
+Name: ${name}
+
+Phone: ${phone}
+
+Furniture Required: ${furniture}
+
+Requirement:
+${message}`;
+
+
+        const whatsappURL=
+            "https://wa.me/919599275475?text="
+            +
+            encodeURIComponent(
+                whatsappMessage
+            );
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SMOOTH ANCHOR OFFSET
+========================================================= */
+
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(function(anchor){
+
+    anchor.addEventListener("click",function(e){
+
+        const targetId=
+            this.getAttribute("href");
+
+        if(
+            targetId==="#" ||
+            !document.querySelector(targetId)
+        ){
+
+            return;
+
+        }
+
+        e.preventDefault();
+
+
+        const target=
+            document.querySelector(targetId);
+
+
+        const offset=
+            navbar.offsetHeight;
+
+
+        const position=
+            target.getBoundingClientRect().top
+            +
+            window.pageYOffset
+            -
+            offset;
+
+
+        window.scrollTo({
+
+            top:position,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   INITIAL SLIDER
+========================================================= */
+
+updateSlider();
+
+</script>
+
+</body>
+</html>
